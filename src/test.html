@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://d3plus.org/js/d3.js"></script>
+    <script src="https://d3plus.org/js/d3plus.js"></script>
+    <style>
+      body {
+        margin: 0;
+        background: linear-gradient(to top, #ddfdff, #6DD5FA, #2980B9);
+      }
+
+      svg {
+        font-family: "Helvetica", "Arial", sans-serif;
+        height: 100%;
+        width: 100%;
+        background: transparent;
+      }
+
+      .type {
+        fill: #888;
+        text-anchor: middle;
+      }
+
+      .shape {
+        fill: red;
+        stroke: black;
+      }
+
+      .invis {
+        fill: transparent;
+        stroke: transparent;
+      }
+
+      .title {
+        fill: #ffebeb;
+      }
+    </style>
+  </head>
+  <body>
+    <svg>
+      <path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M584.924 352C566.379 596.253 442.233 717.371 312.762 721.625C314.849 722.912 315.945 724.404 315.439 725.873C314.85 727.582 313.363 728.819 311.349 729.634C313.835 731.14 315.947 732.306 317.185 732.541C324.33 733.901 329.242 736.83 328.72 740.738C326.639 756.297 285.436 758.859 279.246 744.483C277.43 740.263 282.545 736.546 290.185 734.22C291.876 733.706 291.976 731.183 291.936 728.476C288.699 727.054 286.268 725.043 285.663 722.579C285.504 721.933 285.607 721.353 285.928 720.839C157.97 709.163 31.5609 584.211 2.92421 352C-23.4665 138 133.209 0 293.924 0C454.639 0 600.034 153 584.924 352Z" fill="#C80E0E"/>
+
+      <!-- 'd3plus' uses this circle as a text mask. -->
+      <!-- Honestly, I don't fully understand how this works; -->
+      <!-- Changing the circle's radius yields strange effects. -->
+      <circle class="shape invis" r="15px" cx="0px" cy="0px"></circle>
+
+      <text id="circleResize" class="wrap title" x="0px" y="110px" font-size="2rem">
+        Why is it so difficult to center text in a shape like this while specifying curved outer bounds?
+      </text>
+
+    </svg>
+
+    <script>
+      // Wrap text in a circle, and size the text to fit.
+      d3plus.textwrap()
+        .container(d3.select("#circleResize"))
+        .width(620)
+        .height(1000)
+        .resize(true)
+        .draw();
+    </script>
+  </body>
+</html>
