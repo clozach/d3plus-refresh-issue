@@ -1,69 +1,42 @@
-*Psst — looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# 0 - The Problem
 
+I'm trying to make an animation where user-settable text gets displayed on a balloon as the balloon floats across the screen, but…I'm stuck! 🥺
+
+Specifically, I've got two issues, one of which seems to be a `d3plus` issue.
+
+> [This video](https://github.com/clozach/d3plus-refresh-issue/blob/master/d3plus-refresh-issue.mov?raw=true) demonstrates both problems.
+
+# Issue 1 - Text placement
+
+Initial rendering in Svelte works fine, but as soon as I change the text (by typing or pasting into the text field), the text renders in the balloon's "home" position, rather than rendering with the same offset as the balloon.
+
+# Issue 2 - Text clipping
+Some text wraps "better" than others, and, sadly, none of it gets hyphenation. But why does this display in its entirety…
+
+> Why is it so difficult to center text in a shape like this while specifying curved outer bounds?
+
+…and this…
+
+> This is a wrapped sentence that I want on the bloody balloon! And without effin' ellipses!
+
+…ends up as…
+
+```
+     This is a
+      wrapped
+  sentence that I
+want on the bloody
+   balloon! And
+     without...
+```
 ---
 
-# svelte app
+# Quick Start
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+To play around with the code directly:
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
-
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
 ```
-
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
-
-
-## Get started
-
-Install the dependencies...
-
-```bash
-cd svelte-app
+git clone https://github.com/clozach/d3plus-refresh-issue.git
 npm install
-```
-
-...then start [Rollup](https://rollupjs.org):
-
-```bash
 npm run dev
-```
-
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public
 ```
