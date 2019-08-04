@@ -7,6 +7,9 @@
       .container(d3.select("#circleResize"))
       .resize(true)
       .draw();
+
+    d3.select("#circleResize")
+      .attr("transform", `translate(${x}, ${y})`);
   }
 
   onMount(rewrap);

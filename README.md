@@ -6,7 +6,7 @@ Specifically, I've got two issues, one of which seems to be a `d3plus` issue.
 
 > [This video](https://github.com/clozach/d3plus-refresh-issue/blob/master/d3plus-refresh-issue.mov?raw=true) demonstrates both problems.
 
-# Issue 1 - Text placement
+# Issue 1 - Text placement [Solved]
 
 Initial rendering in Svelte works fine, but as soon as I change the text (by typing or pasting into the text field), the text renders in the balloon's "home" position, rather than rendering with the same offset as the balloon.
 
