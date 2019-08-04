@@ -23,6 +23,10 @@
 	<input type="range" bind:value={y} max={windowHeight - (2 * minY)}>
 </label>
 
-<div>x: {x} y: {y}</div>
+<label>r
+	<input type="range" bind:value={radius} min=50 max=300>
+</label>
+
+<div>x: {x}, y: {y}, radius: {radius}</div>
 
 <Balloon bind:x bind:y bind:radius bind:title/>

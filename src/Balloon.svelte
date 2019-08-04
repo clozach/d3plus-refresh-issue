@@ -13,11 +13,11 @@
 
   export let x = 0;
   export let y = 0;
-  export const radius = 73;
+  export let radius = 73;
   export let title;
   let skyHeight;
 
-  $: title, rewrap();
+  $: radius, title, rewrap();
 
 </script>
 
