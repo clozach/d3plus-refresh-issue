@@ -8,6 +8,7 @@
   let y;
   let windowWidth;
   let windowHeight;
+  let scale;
   let radius;
   let minY = 150;
   let title = "Why is it so difficult to center text in a shape like this while specifying curved outer bounds?";``
@@ -23,10 +24,10 @@
 	<input type="range" bind:value={y} max={windowHeight - (2 * minY)}>
 </label>
 
-<label>r
-	<input type="range" bind:value={radius} min=50 max=300>
+<label>scale
+	<input type="range" bind:value={scale} min=0.7 max=3 step=0.01>
 </label>
 
-<div>x: {x}, y: {y}, radius: {radius}</div>
+<div>x: {x}, y: {y}, scale: {scale}</div>
 
-<Balloon bind:x bind:y bind:radius bind:title/>
+<Balloon bind:x bind:y bind:scale bind:radius bind:title/>
